@@ -1,0 +1,186 @@
+/* 初始化 */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* 游戏的背景 */
+.content {
+  background-color: rgba(100, 100, 100, 0.4);
+  width: 800px;
+  height: 600px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.point {
+  position: absolute;
+  left: 105%;
+  padding: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.point p {
+  border-radius: 5px;
+  text-align: right;
+  font-size: 20px;
+  outline: none;
+  min-width: 100px;
+  max-width: 180px;
+  margin: 0;
+}
+
+p:first-letter {
+  font-size: 40px;
+}
+
+.point::before {
+  content: "得分: ";
+  font-size: 20px;
+  position: absolute;
+  bottom: 100%;
+}
+
+.btns {
+  text-align: center;
+  margin: 20px auto;
+  padding: 0 200px;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 5px 20px;
+}
+
+/* 基础块的样式 */
+.base {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: left, top, background;
+  transition-duration: 0.5s;
+}
+
+.head {
+  transition: all 0.5s;
+  clip-path: polygon(
+    0 0,
+    100% 35%,
+    100% 40%,
+    40% 50%,
+    100% 65%,
+    100% 85%,
+    0 100%
+  );
+}
+
+.eat {
+  animation: eat 1s ease;
+}
+
+@keyframes eat {
+  from {
+    clip-path: polygon(
+      0 0,
+      100% 35%,
+      100% 40%,
+      40% 50%,
+      100% 65%,
+      100% 85%,
+      0 100%
+    );
+  }
+
+  30% {
+    clip-path: polygon(
+      0 0,
+      100% 10%,
+      100% 20%,
+      40% 50%,
+      100% 75%,
+      100% 95%,
+      0 100%
+    );
+  }
+
+  55% {
+    clip-path: polygon(
+      0 0,
+      100% 35%,
+      100% 40%,
+      40% 50%,
+      100% 65%,
+      100% 85%,
+      0 100%
+    );
+  }
+
+  60% {
+    clip-path: polygon(
+      0 0,
+      100% 15%,
+      100% 20%,
+      40% 50%,
+      100% 75%,
+      100% 95%,
+      0 100%
+    );
+  }
+
+  80% {
+    clip-path: polygon(
+      0 0,
+      100% 35%,
+      100% 40%,
+      40% 50%,
+      100% 65%,
+      100% 85%,
+      0 100%
+    );
+  }
+}
+
+@keyframes shane {
+  form {
+    border-color: white;
+  }
+
+  54% {
+    border-color: white;
+  }
+
+  55% {
+    border-color: #777;
+  }
+
+  61% {
+    border-color: black;
+  }
+
+  62% {
+    border-color: white;
+  }
+}
+
+.head::before {
+  content: "";
+  position: absolute;
+  border: 3px solid white;
+  left: 20%;
+  top: 10%;
+  border-radius: 50%;
+  /* animation: shane 1s ease infinite; */
+}
+
+.head::after {
+  content: '';
+  position: absolute;
+  border: 2px solid red;
+  left: 24%;
+  top: 14%;
+  border-radius: 50%;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>扫雷</title>
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/mine.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <select class="select">
+          <option selected disabled hidden>请选择</option>
+          <option value="1">简单</option>
+          <option value="2">中等</option>
+          <option value="3">困难</option>
+        </select>
+        <nav class="tool">
+          <div class="flag">
+            <span></span>
+            <span>00</span>
+          </div>
+          <div class="time">
+            <span></span>
+            <span>0000</span>
+          </div>
+        </nav>
+        <nav class="close">
+          <button><i class="fa fa-close"></i></button>
+        </nav>
+      </div>
+    </div>
+    <script src="./js/mine.js"></script>
+  </body>
+</html>
